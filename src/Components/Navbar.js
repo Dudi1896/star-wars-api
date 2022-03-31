@@ -8,13 +8,13 @@ import { Typography } from "@mui/material";
 import { InputBase } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { Search } from "@mui/icons-material";
-import { Paper } from "@mui/material";
 import { CssBaseline } from "@mui/material";
-import { Container } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
 import { PropTypes } from "prop-types";
+import { Stack } from "@mui/material";
+import { Button } from "@mui/material";
 
 const SearchBox = styled("div")(({ theme }) => ({
   position: "relative",
@@ -108,7 +108,7 @@ export default function Navbar(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar>
+      <AppBar color="grey">
         <Toolbar>
           <IconButton
             size="large"
@@ -136,14 +136,14 @@ export default function Navbar(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </SearchBox>
+          <Stack direction="row" spacing={2}>
+            <Button varient="outlined" href="#outlined-buttons">
+              Request
+            </Button>
+          </Stack>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      <Container>
-        <Box sx={{ my: 2 }}>
-          {[...new Array(1)].map(() => `Cur et.`).join("\n")}
-        </Box>
-      </Container>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
