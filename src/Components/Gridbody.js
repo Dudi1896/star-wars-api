@@ -1,6 +1,8 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
+import { Grid } from "@mui/material";
+import Card from "./Card";
 
 function Item(props) {
   const { sx, ...other } = props;
@@ -39,21 +41,17 @@ Item.propTypes = {
 export default function GridBody() {
   return (
     <div style={{ width: "100%" }}>
-      <Box
-        sx={{
-            display: "grid",
-            gridAutoFlow: 'row',
-            gridTemplateColumns: 'repeat(5, 1fr)',
-            gridTemplateRows: 'repeat(5, 60px)',
-            gap: 1,
-        }}
-      >
-        <Item sx={{ gridColumn: "1", gridRow: "1/ 3" }}>1</Item>
-        <Item>2</Item>
-        <Item>3</Item>
-        <Item>4</Item>
-        <Item sx={{ gridColumn: "5", gridRow: "1 / 3" }}>5</Item>
-      </Box>
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        {Array.from(Array(6)).map((_, index) => (
+          <Grid item xs={2} sm={4} md={4} key={index}>
+            <Item>
+              <Card />
+            </Item>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
     </div>
   );
 }

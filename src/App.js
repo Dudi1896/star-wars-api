@@ -3,6 +3,8 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import Gridbody from "./Components/Gridbody";
 import Scrollbutton from "./Components/Scrollbutton";
+import CardList from "./Components/CardList";
+import { CarCrash } from "@mui/icons-material";
 
 function App() {
   return (
@@ -10,12 +12,13 @@ function App() {
       <header className="App-header">
         <Navbar />
         <Scrollbutton />
-        <Gridbody />
       </header>
       <body className="App-body">
+        {/* <CardList /> */}
         <Gridbody />
         <img src={logo} className="App-logo" alt="logo" />
       </body>
+      <footer></footer>
     </div>
   );
 }

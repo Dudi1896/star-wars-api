@@ -6,7 +6,6 @@ import { Toolbar } from "@mui/material";
 import { IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
 import { InputBase } from "@mui/material";
-import { Menu } from "@mui/icons-material";
 import { Search } from "@mui/icons-material";
 import { CssBaseline } from "@mui/material";
 import Fab from "@mui/material/Fab";
@@ -15,6 +14,7 @@ import Zoom from "@mui/material/Zoom";
 import { PropTypes } from "prop-types";
 import { Stack } from "@mui/material";
 import { Button } from "@mui/material";
+import swapilogo from "./assets/swapilogo.png"
 
 const SearchBox = styled("div")(({ theme }) => ({
   position: "relative",
@@ -115,9 +115,9 @@ export default function Navbar(props) {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <Menu />
+            sx={{ mr: 6 }}
+          > 
+             <img src={swapilogo} className="swapi-logo" alt="logo" />
           </IconButton>
           <Typography
             variant="h6"
